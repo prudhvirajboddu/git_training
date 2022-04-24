@@ -2,7 +2,11 @@
 
 **An interactive git tutorial meant to teach you how git works, not just which commands to execute.**
 
+<<<<<<< HEAD
 So, you want to use git, right? 
+=======
+So, you want to use git right? 
+>>>>>>> tutorial_wip
 
 But you don't just want to learn commands, you want to understand what you're using? 
 
@@ -48,7 +52,11 @@ The _Development Environment_ is what you have on your local machine.
 The three parts of it are your _Working Directory_, the _Staging Area_ and the _Local Repository_. We'll learn more about those as we start using git. 
 
 Choose a place in which you want to put your _Development Environment_. 
+<<<<<<< HEAD
 Just go to your home folder, or wherever you like to put your projects. You don't need to create a new folder for your _Dev Environment_ though. 
+=======
+Just go to your home folder, or where ever you like to put your projects. You don't need to create a new folder for your _Dev Environment_ though. 
+>>>>>>> tutorial_wip
 
 ## Getting a _Remote Repository_ 
 
@@ -73,15 +81,26 @@ What `git clone` also does, is create a new folder wherever you called it. There
 
 ## Adding new things
 
+<<<<<<< HEAD
 Someone already put a file named `Alice.txt` into the _Remote Repository_. It's kind of lonely there, so let's create a new file and call it `Bob.txt`. 
 
 What you've just done is add the file to your _Working Directory_. 
 There are two kinds of files in your _Working Directory_: _tracked_ files that git knows about and _untracked_ files that git doesn't know about (yet). 
+=======
+Someone already put a file into the _Remote Repository_. It's `Alice.txt`, and kind of lonely there. Let's create a new file and call it `Bob.txt`. 
+
+What you've just done is add the file to your _Working Directory_. 
+There's two kinds of files in your _Working Directory_: _tracked_ files that git knows about and _untracked_ files that git doesn't know about (yet). 
+>>>>>>> tutorial_wip
 
 To see what's going on in your _Working Directory_ run `git status`, which will tell you what branch you're on, whether your _Local Repository_ is different from the _Remote_ and the state of _tracked_ and _untracked_ files. 
 
 You'll see that `Bob.txt` is untracked, and `git status` even tells you how to change that. 
+<<<<<<< HEAD
 In the picture below you can see what happens when you follow the advice and execute `git add Bob.txt`: You've added the file to the _Staging Area_, where you collect all the changes you wish to put into _Repository_.
+=======
+In the picture below you can see what happens when you follow the advice and execute `git add Bob.txt`: You've added the file to the _Staging Area_, in which you collect all the changes you wish to put into _Repository_
+>>>>>>> tutorial_wip
 
 ![Adding changes to the staging area](img/add.png)
 
@@ -93,7 +112,11 @@ The collected changes that you _commit_ are some meaningful chunk of work, so wh
 
 You can also add your _commit message_ right there in the command line if you call `git commit` like this: `git commit -m "Add Bob"`. But because you want to write [good commit messages](https://chris.beams.io/posts/git-commit/) you really should take your time and use the editor.
 
+<<<<<<< HEAD
 Now your changes are in your local repository, which is a good place for them to be as long as no one else needs them or you're not yet ready to share them. 
+=======
+Now your changes are in your local repository, which is a good place for the to be as long as no one else needs them or you're not yet ready to share them. 
+>>>>>>> tutorial_wip
 
 In order to share your commits with the _Remote Repository_ you need to `push` them. 
 
@@ -128,11 +151,19 @@ Go ahead and `git add Bob.txt` like you've done before. As we know, this moves y
 
 I want to see the changes we just _staged_, so let's show the `git diff` again! You'll notice that this time the output is empty. This happens because `git diff` operates on the changes in your _Working Directory_ only. 
 
+<<<<<<< HEAD
 To show what changes are already_staged_, we can use `git diff --staged` and we'll see the same diff output as before. 
 
 I just noticed that we put two exclamation marks after the 'Hi'. I don't like that, so lets change `Bob.txt` again, so that it's just 'Hi!' 
 
 If we now run `git status` we'll see that there are two changes: the one we already _staged_ where we added text, and the one we just made, which is still only in the working directory. 
+=======
+To show what changes are _staged_ already, we can use `git diff --staged` and we'll see the same diff output as before. 
+
+I just noticed that we put two exclamation marks after the 'Hi'. I don't like that, so lets change `Bob.txt` again, so that it's just 'Hi!' 
+
+If we now run `git status` we'll see that there's two changes, the one we already _staged_ where we added text, and the one we just made, which is still only in the working directory. 
+>>>>>>> tutorial_wip
 
 We can have a look at the `git diff` between the _Working Directory_ and what we've already moved to the _Staging Area_, to show what has changed since we last felt ready to _stage_ our changes for a _commit_. 
 
@@ -148,7 +179,11 @@ index 8eb57c4..3ed0e1b 100644
 
 As the change is what we wanted, let's `git add Bob.txt` to stage the current state of the file. 
 
+<<<<<<< HEAD
 Now we're ready to `commit` what we just did. I went with `git commit -m "Add text to Bob"` because I felt that for such a small change writing one line would be enough. 
+=======
+Now we're ready to `commit` what we just did. I went with `git commit -m "Add text to Bob"` because I felt for such a small change writing one line would be enough. 
+>>>>>>> tutorial_wip
 
 As we know, the changes are now in the _Local Repository_. 
 We might still want to know what change we just _committed_ and what was there before. 
@@ -190,11 +225,16 @@ Date:   Fri Jan 25 19:25:23 2019 +0100
       See the tutorial_wip branch for the actual commit history
 ```
 
+<<<<<<< HEAD
 Here we see a few interesting things: 
+=======
+In there we see a few interesting things: 
+>>>>>>> tutorial_wip
 * The first two commits are made by me.
 * Your initial commit to add Bob is the current _HEAD_ of the _master_ branch on the _Remote Repository_. We'll look at this again when we talk about branches and getting remote changes.
 * The latest commit in the _Local Repository_ is the one we just made, and now we know its hash.
 
+<<<<<<< HEAD
 > Note that the actual commit hashes will be different for you. If you want to know how exactly git arrives at those revision IDs have a look at [this interesting article](https://blog.thoughtram.io/git/2014/11/18/the-anatomy-of-a-git-commit.html).
 
 To compare that commit and a previous one we can do `git diff <commit>^!` (where the `^!` tells git to compare the commit to the one that came before it). So in this case I run `git diff 87a4ad48d55e5280aa608cd79e8bce5e13f318dc^!`.
@@ -202,6 +242,15 @@ To compare that commit and a previous one we can do `git diff <commit>^!` (where
 We can also do `git diff 8af2ff2a8f7c51e2e52402ecb7332aec39ed540e 87a4ad48d55e5280aa608cd79e8bce5e13f318dc` for the same result and in general to compare any two commits. Note that the format here is `git diff <from commit> <to commit>`, so our new commit comes second.
 
 In the diagram below you again see the different stages of a change and the corresponding diff commands. 
+=======
+> Note that the actual commit hashes will be different for you. If you want to know how exactly git arrives at those revision IDs have a look at [this interesting article ](https://blog.thoughtram.io/git/2014/11/18/the-anatomy-of-a-git-commit.html).
+
+To compare that commit and the one one before we can do `git diff <commit>^!`, where the `^!` tells git to compare to the commit one before. So in this case I run `git diff 87a4ad48d55e5280aa608cd79e8bce5e13f318dc^!`
+
+We can also do `git diff 8af2ff2a8f7c51e2e52402ecb7332aec39ed540e 87a4ad48d55e5280aa608cd79e8bce5e13f318dc` for the same result and in general to compare any two commits. Note that the format here is `git diff <from commit> <to commit>`, so our new commit comes second.
+
+In the diagram below you again see the different stages of a change, and the diff commands that apply to where a file currently is. 
+>>>>>>> tutorial_wip
 
 ![States of a change an related diff commands](img/diffs.png)
 
@@ -213,7 +262,11 @@ Another thing that makes git great, is the fact that working with branches is re
 
 In fact we've been working on a branch since we've started.
 
+<<<<<<< HEAD
 When you `clone` the _Remote Repository_ your _Dev Environment_ automatically starts on the repositories main branch, i.e. _master_.
+=======
+When you `clone` the _Remote Repository_ your _Dev Environment_ automatically starts on the repositories main or _master_ branch.
+>>>>>>> tutorial_wip
 
 Most work-flows with git include making your changes on a _branch_, before you `merge` them back into _master_. 
 Usually you'll be working on your own _branch_, until you're done and confident in your changes which can then be merged into the _master_. 
@@ -241,6 +294,7 @@ You can think of _branches_ in git as pointers, pointing to a series of commits.
 Just adding a branch, doesn't directly take you there, it just creates such a pointer. 
 In fact the state your _Local Repository_ is currently at, can be viewed as another pointer, called _HEAD_, which points to what branch and commit you are currently at. 
 
+<<<<<<< HEAD
 If that sounds complicated the diagrams below will hopefully help clear things up a bit:
 
 ![State after adding branch](img/add_branch.png)
@@ -248,12 +302,26 @@ If that sounds complicated the diagrams below will hopefully help clear things u
 To switch to our new branch you will have to use `git checkout change_alice`. What this does is simply move the _HEAD_ to the branch you specify.
 
 > As you'll usually want to switch to a branch right after creating it, there is the convenient `-b` option available for the `checkout` command, which allows you to just directly `checkout` a _new_ branch, so you don't have to create it beforehand. 
+=======
+If that sounds complicated the diagrams below will hopefully help to clear things up a bit:
+
+![State after adding branch](img/add_branch.png)
+
+To switch to our new branch you will have to use `git checkout change_alice`. What this does is simply to move the _HEAD_ to the branch you specify.
+
+> As you'll usually want switch to a branch right after creating it, there is the convenient `-b` option available for the `checkout` command, which allows you to just directly `checkout` a _new_ branch, so you don't have to create it beforehand. 
+>>>>>>> tutorial_wip
 
 > So to create and switch to our `change_alice` branch, we could also just have called `git checkout -b change_alice`.
 
 ![State after after switching branch](img/checkout_branch.png)
 
+<<<<<<< HEAD
 You'll notice that your _Working Directory_ hasn't changed and the fact that we've _modified_ `Alice.txt` is not related to the branch we're on yet. Now you can `add` and `commit` the change to `Alice.txt` just like we did on the _master_ before, which will _stage_ (at which point it's still unrelated to the branch) and finally _commit_ your change to the `change_alice` branch. 
+=======
+You'll notice that your _Working Directory_ hasn't changed. That we've _modified_ `Alice.txt` is not related to the branch we're on yet. 
+Now you can `add` and `commit` the change to `Alice.txt` just like we did on the _master_ before, which will _stage_ (at which point it's still unrelated to the branch) and finally _commit_ your change to the `change_alice` branch. 
+>>>>>>> tutorial_wip
 
 There's just one thing you can't do yet. Try to `git push` your changes to the _Remote Repository_.
 
@@ -270,7 +338,11 @@ But we don't just want to blindly do that. We're here to understand what's actua
 
 Remember when we `cloned` the _Remote Repository_ a while ago? At that point it didn't only contain this tutorial and `Alice.txt` but actually two branches. 
 
+<<<<<<< HEAD
 The _master_ we just went ahead and started working on, and the one I called "tutorial_wip" on which I commit all the changes I make to this tutorial. 
+=======
+The _master_ we just went ahead and started working on, and one I called "tutorial_wip" on which I commit all the changes I make to this tutorial. 
+>>>>>>> tutorial_wip
 
 When we copied the things in the _Remote Repository_ into your _Dev Environment_ a few extra steps happened under the hood. 
 
@@ -278,11 +350,19 @@ Git setup the _remote_ of your _Local Repository_ to be the _Remote Repository_ 
 
 >Your _Local Repository_ can track several _remotes_ and they can have different names, but we'll stick to the `origin` and nothing else for this tutorial. 
 
+<<<<<<< HEAD
 Then it copied the two remote branches into your _Local Repository_ and finally it `checkout`ed _master_ for you. 
 
 When doing that, another implicit step happens. When you `checkout` a branch name that has an exact match in the remote branches, you will get a new _local_ branch that is linked to the _remote_ branch. The _remote_ branch is the _upstream branch_ of your _local_ one. 
 
 In the diagrams earlier you can see just the local branches you have. You can see that list of local branches by running `git branch`. 
+=======
+Then it copied the two remote branches into your _Local Repository_ and finally it `checked out` _master_ for you. 
+
+When doing that another implicit step happens. When you `checkout` a branch name that has an exact match in the remote branches, you will get a new _local_ branch that is linked to the _remote_ branch. The _remote_ branch is the _upstream branch_ of your _local_ one. 
+
+In the diagrams above you can see just the local branches you have. You can see that list of local branches by running `git branch`. 
+>>>>>>> tutorial_wip
 
 If you want to also see the _remote_ branches your _Local Repository_ knows, you can use `git branch -a` to list all of them.
 
@@ -290,7 +370,11 @@ If you want to also see the _remote_ branches your _Local Repository_ knows, you
 
 Now we can call the suggested `git push --set-upstream origin change_alice`, and `push` the changes on our branch to a new _remote_. This will create a `change_alice` branch on the _Remote Repository_ and set our _local_ `change_alice` to track that new branch. 
 
+<<<<<<< HEAD
 > There is another option if we actually want our branch to track something that already exists on the _Remote Repository_. Maybe a colleague has already pushed some changes, while we were working on some related issue on our local branch, and we'd like to integrate the two. Then we could just set the _upstream_ for our `change_alice` branch to a new _remote_ by using `git branch --set-upstream-to=origin/change_alice` and from there to track the _remote_ branch.
+=======
+> There is another option if we actually want our branch to track something that already exists on the _Remote Repository_. Maybe a colleague has already pushed some changes, while we were working on something related on our local branch, and we'd like to integrate the two. Then we could just set the _upstream_ for our `change_alice` branch to a new _remote_ by using `git branch --set-upstream-to=origin/change_alice` and from there on track the _remote_ branch.
+>>>>>>> tutorial_wip
 
 After that went through have a look at your _Remote Repository_ on github, your branch will be there, ready for other people to see and work with. 
 
@@ -305,17 +389,29 @@ We've just changed `Alice.txt` on the `change_alice` branch, and I'd say we're h
 
 If you go and `git checkout master`, the `commit` we made on the other branch will not be there. To get the changes into master we need to `merge` the `change_alice` branch _into_ master. 
 
+<<<<<<< HEAD
 Note that you always `merge` a particular branch _into_ the one you're currently at. 
 
 ### Fast-Forward merging
 
 As we've already `checked out` _master_, we can now `git merge change_alice`. 
+=======
+Note that you always `merge` some branch _into_ the one you're currently at. 
+
+### Fast-Forward merging
+
+As we've already `checked out` master, we can now `git merge change_alice`. 
+>>>>>>> tutorial_wip
 
 As there are no other _conflicting_ changes to `Alice.txt`, and we've changed nothing on _master_, this will go through without a hitch in what is called a _fast forward_ merge. 
 
 In the diagrams below, you can see that this just means that the _master_ pointer can simply be advanced to where the _change_alice_ one already is. 
 
+<<<<<<< HEAD
 The first diagram shows the state before our `merge`, _master_ is still at the commit it originally was, and on the other branch we've made one more commit. 
+=======
+The first diagram shows the state before our `merge`, _master_ is still at the commit it was, and on the other branch we've made one more commit. 
+>>>>>>> tutorial_wip
 
 ![Before fast forward merge](img/before_ff_merge.png)
 
@@ -335,7 +431,11 @@ In the diagram below you see how our commit history now looks. Both _master_ and
 
 ![Divergent commits](img/branches_diverge.png)
 
+<<<<<<< HEAD
 If you now switch back to master (`git checkout master`) and do `git merge change_alice` a fast-forward merge is not possible. Instead your favorite text editor will open and allow you to change the message of the `merge commit` git is about to make in order to get the two branches back together. You can just go with the default message right now. The diagram below shows the state of our git history after we the `merge`.
+=======
+If you now `git merge change_alice` a fast-forward merge is not possible. Instead your favorite text editor will open and allow you to change the message of the `merge commit` git is about to make in order to get the two branches back together. You can just go with the default message right now. The diagram below shows the state of our git history after we the `merge`.
+>>>>>>> tutorial_wip
 
 ![Merging branches](img/merge.png)
 
@@ -349,7 +449,11 @@ So far our changes haven't interfered with each other.
 
 Let's introduce a _conflict_ and then _resolve_ it. 
 
+<<<<<<< HEAD
 Create and `checkout` a new branch. You know how, but maybe try using `git checkout -b` to make your life easier. 
+=======
+Create and `checkout` a new branch. You know how, but maybe try using `git checkout -b` to make your live easier. 
+>>>>>>> tutorial_wip
 I've called mine `bobby_branch`.
 
 On the branch we'll make a change to `Bob.txt`. 
@@ -358,7 +462,11 @@ The first line should still be `Hi!! I'm Bob. I'm new here.`. Change that to `Hi
 Stage and then `commit` your change, before you `checkout` _master_ again. Here we'll change that same line to `Hi!! I'm Bob. I've been here for a while now.` and `commit` your change. 
 
 Now it's time to `merge` the new branch into _master_. 
+<<<<<<< HEAD
 When you try that, you'll see the following output:
+=======
+When you try that, you'll see the following output
+>>>>>>> tutorial_wip
 
 ```ShellSession
 Auto-merging Bob.txt
@@ -425,7 +533,11 @@ Like in our merging example the history of these two branches diverges at a comm
 
 ![History before a rebase](img/before_rebase.png)
 
+<<<<<<< HEAD
 Now let's `checkout add_patrick` again, and get that change that was made on _master_ into the branch we are working on! 
+=======
+Now let's `checkout add_patrick` again, and get that change that was made on _master_ into the branch we work on! 
+>>>>>>> tutorial_wip
 
 When we `git rebase master`, we re-base our `add_patrick` branch on the current state of the _master_ branch. 
 
@@ -467,7 +579,11 @@ Just like for a `merge` you may run into conflicts, if you run into two commits 
 However when you encounter a conflict during a `rebase` you don't fix it in an extra _merge commit_, but can simply resolve it in the commit that is currently being applied. 
 Again, basing your changes directly on the current state of the original branch. 
 
+<<<<<<< HEAD
 Actually resolving conflicts while you `rebase` is very similar to how you would do it for a `merge`, so refer back to that section if you're not sure anymore how to do it. 
+=======
+Actually resolving conflicts while you `rebase` is very similar to how you would for a `merge` so refer back to that section if you're not sure anymore how to do it. 
+>>>>>>> tutorial_wip
 
 The only distinction is, that as you're not introducing a _merge commit_ there is no need to `commit` your resolution. Simply `add` the changes to the _Staging Environment_ and then `git rebase --continue`. The conflict will be resolved in the commit that was just being applied. 
 
@@ -493,7 +609,11 @@ For our example, we'll use the online tools offered by _GitHub_, to simulate som
 
 Go to your `fork` of this repo on [github.com](https://www.github.com) and open the `Alice.txt` file. 
 
+<<<<<<< HEAD
 Find the edit button, make a change, and commit it via the website. 
+=======
+Find the edit button and make and commit a change via the website. 
+>>>>>>> tutorial_wip
 
 ![github edit](img/github.png) 
 
@@ -505,7 +625,11 @@ We still remember that when you `git push`, you synchronize changes made to the 
 
 To get changes made to the _Remote_ into your _Local Repository_ you use `git fetch`. 
 
+<<<<<<< HEAD
 This gets any changes on the remote - both commits and branches - into your _Local Repository_.
+=======
+This gets any changes on the remote - so commits as well as branches - into your _Local Repository_.
+>>>>>>> tutorial_wip
 
 Note that at this point, changes aren't integrated into the local branches and thus the _Working Directory_ and _Staging Area_ yet.
 
@@ -556,17 +680,29 @@ A `git stash` is basically a stack of changes on which you store any changes to 
 
 The commands you'll mostly use are `git stash` which places any modifications to the _Working Directory_ on the stash, and `git stash pop` which takes the latest change that was stashed and applies it the to the _Working Directory_ again. 
 
+<<<<<<< HEAD
 Just like the [stack commands](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)) it's named after, `git stash pop` removes the latest stashed change before applying these changes to the working directory. 
 If you want to keep the stashed changes, you can use `git stash apply`, this applies the latest stashed changes to the working directory without removing them from the stash. 
 
 To inspect your current `stash` you can use `git stash list` to list the individual entries, and `git stash show` to show the changes in the latest entry on the `stash`. 
+=======
+Just like the stack commands it's named after `git stash pop` removes the latest stashed change before applying it again. 
+If you want to keep the stashed changes, you can use `git stash apply`, which doesn't remove them from the stash before applying them. 
+
+To inspect you current `stash` you can use `git stash list` to list the individual entries, and `git stash show` to show the changes in the latest entry on the `stash`. 
+>>>>>>> tutorial_wip
 
 > Another nice convenience command is `git stash branch {BRANCH NAME}`, which creates a branch, starting from the HEAD at the moment you've stashed the changes, and applies the stashed changes to that branch.
 
 Now that we know about `git stash`, lets run it to remove our local changes to `Alice.txt` from the _Working Directory_, so that we can go ahead and `git pull` the changes we've made via the website. 
 
 After that, let's `git stash pop` to get the changes back. 
+<<<<<<< HEAD
 As both the commit we `pull`ed in and the `stash`ed change modified `Alice.txt` you will have to resolve the conflict, just how you would in a  `merge` or `rebase`. When you're done, `add` and `commit` the change. 
+=======
+As both the commit we `pull`ed in and the `stash`ed change modified `Alice.txt` you wil have to resolve the conflict, just how you would in a  `merge` or `rebase`.
+When you're done `add` and `commit` the change. 
+>>>>>>> tutorial_wip
 
 ### Pulling with Conflicts
 
@@ -574,9 +710,15 @@ Now that we've understood how to `fetch` and `pull` _Remote Changes_ into our _D
 
 Do not `push` the commit that changed `Alice.txt` and head back to your _Remote Repository_ on [github.com](https://www.github.com). 
 
+<<<<<<< HEAD
 There we're also going to change `Alice.txt` again and commit the change. 
 
 Now there are actually two conflicts between our _Local_ and _Remote Repositories_. 
+=======
+There we're also again going to change `Alice.txt` and commit the change. 
+
+Now there's actually two conflicts between our _Local_ and _Remote Repositories_. 
+>>>>>>> tutorial_wip
 
 Don't forget to run `git fetch` to see the remote change without `pull`ing it in right away. 
 
@@ -594,6 +736,7 @@ In addition we've changed the same file in both of those commits, to introduce a
 
 When you `git pull` while there is a difference between the _Local_ and _Remote Repository_ the exact same thing happens as when you `merge` two branches. 
 
+<<<<<<< HEAD
 Additionally, you can think of the relationship between branches on the _Remote_ and the one in the _Local Repository_ as a special case of creating a branch based on another one. 
 A local branch is based on a branches' state on the _Remote_ from the time you last `fetched` it. 
 
@@ -602,6 +745,16 @@ Thinking that way, the two options you have to get _remote_ changes make a lot o
 When you `git pull`, the _Local_ and _Remote_ versions of a branch will be `merged`. Just like `merging` branches, this will introduce a _merge_ commit. 
 
 As any _local_ branch is based on its respective _remote_ version, we can also `rebase` it, so that any changes we may have made locally, appear as if they were based on the latest version that is available in the _Remote Repository_. 
+=======
+Additionally, you can think of the relationship between branches on the _Remote_ and the one in the _Local Repository_ as a special case of creating a branch based on another. 
+A local branch is based on a branches state on the _Remote_ from the time you last `fetched` it. 
+
+Thinking that way, the two options you have to get _remote_ changes make a lot of sense: 
+
+When you `git pull` the _Local_ and _Remote_ version of a branch will be `merged`. Just like `merging` branches, this will introduce a _merge commit. 
+
+As any _local_ branch is based on its respective _remote_ version, we can also `rebase` it, so that any changes we may have made locally, appear as if they were based on the latest version that is available in the _Remote Repository. 
+>>>>>>> tutorial_wip
 To do that, we can use `git pull --rebase` (or the shorthand `git pull -r`). 
 
 As detailed in the section on [Rebasing](#rebasing), there is a benefit in keeping a clean linear history, which is why I would strongly recommend that whenever you `git pull` you do a `git pull -r`. 
@@ -610,7 +763,11 @@ As detailed in the section on [Rebasing](#rebasing), there is a benefit in keepi
 
 If you haven't already run `git pull` when I first mentioned it a few paragraphs ago, let's now run `git pull -r` to get the remote changes while making it look like our new commit just happened after them. 
 
+<<<<<<< HEAD
 Of course like with a normal `rebase` (or `merge`) you'll have to resolve the conflict we introduced for the `git pull` to finish. 
+=======
+Of course like with a normal `rebase` (or `merge`) you'll have to resolve the conflict we introduced for the `git pull` to be done. 
+>>>>>>> tutorial_wip
 
 ## Cherry-picking
 
@@ -624,7 +781,11 @@ Of course like with a normal `rebase` (or `merge`) you'll have to resolve the co
 
 From earlier sections you still remember roughly what a `commit` is made off, right? 
 
+<<<<<<< HEAD
 And how your commits are applied as new commits with the same _change set_ and _message_ when you [`rebase`](#rebasing) a branch? 
+=======
+And how when you [`rebase`](#rebasing) a branch your commits are applied as new commits with the same _change set_ and _message_? 
+>>>>>>> tutorial_wip
 
 Whenever you want to just take a few choice changes from one branch and apply them to another branch, you want to `cherry-pick` these commits and put them on your branch. 
 
@@ -632,7 +793,11 @@ That is exactly what `git cherry-pick` allows you to do with either single commi
 
 Just like during a `rebase` this will actually put the changes from these commits into a new commit on your current branch. 
 
+<<<<<<< HEAD
 Lets have a look at examples for each `cherry-pick`ing: with one or more commits. 
+=======
+Lets have a look at an example each for `cherry-pick`ing one or more commits: 
+>>>>>>> tutorial_wip
 
 The figure below shows three branches before we have done anything. Let's assume we really want to get some changes from the `add_patrick` branch into the `change_alice` branch. Sadly they haven't made it into master yet, so we can't just `rebase` onto master to get those changes (along with any other changes on the other branch, that we might not even want). 
 
@@ -654,7 +819,11 @@ The figure below visualizes `cherry-pick`ing a range of commits instead of a sin
 ![Cherry-picking commit range](img/cherry_pick_range.png)
 
 ## Rewriting history
+<<<<<<< HEAD
 > I'm repeating myself now, but you still remember [`rebase`](#rebasing) well enough right? Otherwise quickly jump back to that section, before continuing here, as we'll use what we already know while learning how to change history!
+=======
+> I'm repeating myself now, but you still remember [`rebase`](#rebasing) well enough right? Else quickly jump back to that section, before continuing here, as we'll use what we already know when learning about how change history!
+>>>>>>> tutorial_wip
 
 As you know a `commit` basically contains your changes, a message and few other things. 
 
@@ -681,7 +850,11 @@ One way to fix both of these in one go would be to `amend` the commit we've just
 
 `Amend`ing the latest commit basically works just like making a new one. 
 
+<<<<<<< HEAD
 Before we do anything, take a look at your latest commit, with `git show {COMMIT}`. Put either the commit hash (which you'll probably still see in your command line from the `git commit` call, or in the `git log`), or just _HEAD_.
+=======
+Before we do anything take a look at your latest commit, with `git show {COMMIT}`. Put either the commit hash (which you'll probably still see in your command line from the `git commit` call, or in the `git log`), or just _HEAD_.
+>>>>>>> tutorial_wip
 
 Just like in the `git log` you'll see the message, author, date and of course changes. 
 
@@ -812,7 +985,11 @@ squash 0b22064 Add more text to Alice
 
 Are we done? Will that do what we want? 
 
+<<<<<<< HEAD
 It wont, right? As the comments in the file tell us: 
+=======
+It wont right? As the comments in the file tell us: 
+>>>>>>> tutorial_wip
 
 ```bash
 # s, squash = use commit, but meld into previous commit
@@ -849,7 +1026,11 @@ After you close the editor to finish that commit, it will open again to allow yo
 
 That's it! You've rewritten history again. This time a lot more substantially than when `amend`ing!
 
+<<<<<<< HEAD
 If you look at the `git log` again, you'll see that there are two new commits in place of the three that we had previously. But by now you're used to what `rebase` does to commits and have expected that. 
+=======
+If you look at the `git log` again, you'll see that there's two new commits in place of the three that we had previously. But by now you're used to what `rebase` does to commits and have expected that. 
+>>>>>>> tutorial_wip
 
 ```
 > git log --oneline
@@ -870,7 +1051,11 @@ While all the small atomic changes make it very easy for you to e.g. verify that
 
 Most likely what you want to share with them, are a few well formed changes with nice commit messages telling your colleagues what you did for which reason. 
 
+<<<<<<< HEAD
 As long as all those small commits only exist in your _Dev Environment_, you're perfectly safe to do a `git rebase -i` and change history to your hearts content. 
+=======
+As long as all those small commits only exist in your _Dev Environment_, you're perfectly save to do a `git rebase -i` and change history to your hearts content. 
+>>>>>>> tutorial_wip
 
 Things get problematic when it comes to changing _Public History_. That means anything that has already made it to the _Remote Repository_.
 
@@ -927,9 +1112,15 @@ Luckily `git` has your back, by having a built in safety feature called the _Ref
 
 Whenever any _reference_ like the tip of a branch is updated in your _Local Repository_ a _Reference Log_ entry is added. 
 
+<<<<<<< HEAD
 So there's a record of any time you make a `commit`, but also of when you `reset` or otherwise move the `HEAD` etc. 
 
 Having read this tutorial so far, you see how this might come in handy when we've messed up a `rebase`, right? 
+=======
+So theres a record of any time you make a `commit`, but also of when you `reset` or otherwise move the `HEAD` etc. 
+
+Having read this tutorial so far, you see how this might come in handy when we've messed up a `rebase` right? 
+>>>>>>> tutorial_wip
 
 We know that a `rebase` moves the `HEAD` of our branch to the point we're basing it on and the applies our changes. An interactive `rebase` works similarly, but might do things to those commits like _squashing_ or _rewording_ them. 
 
